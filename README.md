@@ -8,3 +8,5 @@ nvjpeg-python
  nvJpeg write ...
  
  nvJpeg write time is : 8.423215229064226
+
+reference https://github.com/UsingNet/nvjpeg-python
