@@ -2,6 +2,7 @@
 import sys
 import os
 import glob
+from torch.utils import cpp_extension
 from setuptools import setup, find_packages, Extension
 import numpy as np
 import numpy
@@ -12,8 +13,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 from distutils.core import setup, Extension
 setup(name='pynvjpeg',
     version='0.0.7',
-    ext_modules=[Extension('nvjpeg', ['nvjpeg-python.c'],
-                           include_dirs=[np.get_include()])],
+    #ext_modules=[Extension('nvjpeg', ['nvjpeg-python.c'],
+    #                       include_dirs=[np.get_include(),'/usr/local/cuda/include'])],
+    ext_modules=[cpp_extension.CppExtension('nvjpeg',['nvjpeg-python.cpp'],
+                             include_dirs=[np.get_include(),'/usr/local/cuda/include'])],
+    cmdclass={'build_ext': cpp_extension.BuildExtension},
     author="Usingnet",
     author_email="developer@usingnet.com",
     license="MIT",
