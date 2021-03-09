@@ -15,6 +15,8 @@ reference https://github.com/UsingNet/nvjpeg-python
 Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
 
 
+GeForce RTX 2060 
+
 
 | run_times     | resolution    | nvjpeg time  | cv2.imwrite time  |
 | ------------- |:-------------:| ------------:|------------------:|
